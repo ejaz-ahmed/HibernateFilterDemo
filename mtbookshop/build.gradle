@@ -43,17 +43,6 @@ repositories {
     maven { url "https://repo.grails.org/grails/core" }
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-
-
-dependencies {
-    compile name: 'grails-hibernate-filter-0.1.2'
-}
-
 dependencyManagement {
     imports {
         mavenBom "org.grails:grails-bom:$grailsVersion"
@@ -73,7 +62,6 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:scaffolding"
-    compile "org.grails.plugins:grails-hibernate-filter:0.1.2"
 
     runtime "org.grails.plugins:asset-pipeline"
 
@@ -86,7 +74,8 @@ dependencies {
 
     console "org.grails:grails-console"
     compile 'org.grails.plugins:spring-security-core:3.0.0.M1'
-    
+    compile "org.grails.plugins:grails-hibernate-filter:0.1.2"
+
 }
 
 task wrapper(type: Wrapper) {
